@@ -1,3 +1,10 @@
+<!-- TO DO:
+- Cari cara buat target area dalam 1 html
+- Register page, aboutus, contact, followus
+- Carousell (udah)
+- Bagusin footer
+- backend (?) -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,6 +17,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="/js/main.js"></script>
+
+        <!-- Review -->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <!-- CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -31,180 +43,294 @@
         <!-- Navbar -->
         <nav class="navbar navbar-light bg-warning sticky-top">
             <a class="navbar-brand" href="/" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 26px; ">E V E N T E R</a>
-            <div class="my-2 my-lg-0">
-                <button class="btn btn-link" id="register">Register</button>
+            <div class="row">
+                <!-- <button class="btn btn-link" id="register">Register</button> -->
+                <div class="col-md-5">
+                <div class="dropdown">
+                  <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Register
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item">Vendor</a></a>
+                    <a class="dropdown-item" href="#">User</a>
+                  </div>
+                </div>
+                </div>
+                <div class="col-md-5" style="margin-right: 25px;">
                 <button class="btn btn-success" id="login">Log In</button>
+              </div>
             </div>
         </nav>
 
         <div id="main" style="padding: 16px;">
             <!-- D Y N A M I C   C O N T E N T -->
 
-<!-- Trending -->
-  <div class="card" style="width: 18rem;">
-  <img src="placeholder.png" class="card-img-top" alt="...">
-    <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
+            <!-- Trending (not fixed) -->
+            <section class="team-section text-center">
+            <h2 class="h1-responsive font-weight-bold my-5" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 26px; ">T R E N D I N G</h2>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <!-- Slide 1 -->
+                  <div class="container">
+                    <div class="row">
+                    <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                    <img src="placeholder.png" class="card-img-top" alt="...">
+                      <div class="card-body">
+                      <h5 class="card-title">Birthday</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a class="btn btn-primary" id="eomain">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
 
 
-<!-- Testimony-->
-<section class="team-section text-center my-5">
+                    <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                    <img src="placeholder.png" class="card-img-top" alt="...">
+                      <div class="card-body">
+                      <h5 class="card-title">Baptism</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
 
-  <!-- Section heading -->
-  <h2 class="h1-responsive font-weight-bold my-5">Testimonials</h2>
-  <!-- Section description -->
+                    <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                    <img src="placeholder.png" class="card-img-top" alt="...">
+                      <div class="card-body">
+                      <h5 class="card-title">Wedding</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
 
-  <!--Grid row-->
-  <div class="row text-center">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <!-- Slide 2 -->
+                  <div class="container">
+                    <div class="row">
+                    <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                    <img src="placeholder.png" class="card-img-top" alt="...">
+                      <div class="card-body">
+                      <h5 class="card-title">Baby Shower</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
 
-    <!--Grid column-->
-    <div class="col-md-4 mb-md-0 mb-5">
 
-      <div class="testimonial">
-        <!--Avatar-->
-        <div class="avatar mx-auto">
-          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg" class="rounded-circle z-depth-1 img-fluid">
+                    <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                    <img src="placeholder.png" class="card-img-top" alt="...">
+                      <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+
+                    <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                    <img src="placeholder.png" class="card-img-top" alt="...">
+                      <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <!-- Slide 3 -->
+                  <div class="container">
+                    <div class="row">
+                    <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                    <img src="placeholder.png" class="card-img-top" alt="...">
+                      <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+
+
+                    <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                    <img src="placeholder.png" class="card-img-top" alt="...">
+                      <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+
+                    <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                    <img src="placeholder.png" class="card-img-top" alt="...">
+                      <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            </section>
+
+
+
+            <!-- Testimony-->
+            <section class="team-section text-center my-5">
+
+              <!-- Section heading -->
+              <h2 class="h1-responsive font-weight-bold my-5" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 26px; ">T E S T I M O N Y</h2>
+              <!-- Section description -->
+
+              <!--Grid row-->
+              <div class="row text-center">
+
+                <!--Grid column-->
+                <div class="col-md-4 mb-md-0 mb-5">
+
+                  <div class="testimonial">
+                    <!--Avatar-->
+                    <div class="avatar mx-auto">
+                      <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg" class="rounded-circle z-depth-1 img-fluid">
+                    </div>
+                    <!--Content-->
+                    <h4 class="font-weight-bold dark-grey-text mt-4">Anna Deynah</h4>
+                    <h6 class="font-weight-bold blue-text my-3">Web Designer</h6>
+                    <p class="font-weight-normal dark-grey-text">
+                      <i class="fas fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
+                      eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.</p>
+                    <!--Review-->
+                    <div class="orange-text">
+                      <i class="fas fa-star"> </i>
+                      <i class="fas fa-star"> </i>
+                      <i class="fas fa-star"> </i>
+                      <i class="fas fa-star"> </i>
+                      <i class="fas fa-star-half-alt"> </i>
+                    </div>
+                  </div>
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-4 mb-md-0 mb-5">
+
+                  <div class="testimonial">
+                    <!--Avatar-->
+                    <div class="avatar mx-auto">
+                      <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" class="rounded-circle z-depth-1 img-fluid">
+                    </div>
+                    <!--Content-->
+                    <h4 class="font-weight-bold dark-grey-text mt-4">John Doe</h4>
+                    <h6 class="font-weight-bold blue-text my-3">Web Developer</h6>
+                    <p class="font-weight-normal dark-grey-text">
+                      <i class="fas fa-quote-left pr-2"></i>Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                      corporis suscipit laboriosam, nisi ut aliquid commodi.</p>
+                    <!--Review-->
+                    <div class="orange-text">
+                      <i class="fas fa-star"> </i>
+                      <i class="fas fa-star"> </i>
+                      <i class="fas fa-star"> </i>
+                      <i class="fas fa-star"> </i>
+                      <i class="fas fa-star"> </i>
+                    </div>
+                  </div>
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-4">
+
+                  <div class="testimonial">
+                    <!--Avatar-->
+                    <div class="avatar mx-auto">
+                      <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded-circle z-depth-1 img-fluid" id="test3">
+                    </div>
+                    <!--Content-->
+                    <h4 class="font-weight-bold dark-grey-text mt-4">Maria Kate</h4>
+                    <h6 class="font-weight-bold blue-text my-3">Photographer</h6>
+                    <p class="font-weight-normal dark-grey-text">
+                      <i class="fas fa-quote-left pr-2"></i>At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                      blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+                    <!--Review-->
+                    <div class="orange-text">
+                      <i class="fas fa-star"> </i>
+                      <i class="fas fa-star"> </i>
+                      <i class="fas fa-star"> </i>
+                      <i class="fas fa-star"> </i>
+                      <i class="far fa-star"> </i>
+                    </div>
+                  </div>
+
+                </div>
+                <!--Grid column-->
+
+              </div>
+              <!--Grid row-->
+
+            </section>
+
         </div>
-        <!--Content-->
-        <h4 class="font-weight-bold dark-grey-text mt-4">Anna Deynah</h4>
-        <h6 class="font-weight-bold blue-text my-3">Web Designer</h6>
-        <p class="font-weight-normal dark-grey-text">
-          <i class="fas fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-          eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.</p>
-        <!--Review-->
-        <div class="orange-text">
-          <i class="fas fa-star"> </i>
-          <i class="fas fa-star"> </i>
-          <i class="fas fa-star"> </i>
-          <i class="fas fa-star"> </i>
-          <i class="fas fa-star-half-alt"> </i>
-        </div>
-      </div>
-
-    </div>
-    <!--Grid column-->
-
-    <!--Grid column-->
-    <div class="col-md-4 mb-md-0 mb-5">
-
-      <div class="testimonial">
-        <!--Avatar-->
-        <div class="avatar mx-auto">
-          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" class="rounded-circle z-depth-1 img-fluid">
-        </div>
-        <!--Content-->
-        <h4 class="font-weight-bold dark-grey-text mt-4">John Doe</h4>
-        <h6 class="font-weight-bold blue-text my-3">Web Developer</h6>
-        <p class="font-weight-normal dark-grey-text">
-          <i class="fas fa-quote-left pr-2"></i>Ut enim ad minima veniam, quis nostrum exercitationem ullam
-          corporis suscipit laboriosam, nisi ut aliquid commodi.</p>
-        <!--Review-->
-        <div class="orange-text">
-          <i class="fas fa-star"> </i>
-          <i class="fas fa-star"> </i>
-          <i class="fas fa-star"> </i>
-          <i class="fas fa-star"> </i>
-          <i class="fas fa-star"> </i>
-        </div>
-      </div>
-
-    </div>
-    <!--Grid column-->
-
-    <!--Grid column-->
-    <div class="col-md-4">
-
-      <div class="testimonial">
-        <!--Avatar-->
-        <div class="avatar mx-auto">
-          <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded-circle z-depth-1 img-fluid" id="test3">
-        </div>
-        <!--Content-->
-        <h4 class="font-weight-bold dark-grey-text mt-4">Maria Kate</h4>
-        <h6 class="font-weight-bold blue-text my-3">Photographer</h6>
-        <p class="font-weight-normal dark-grey-text">
-          <i class="fas fa-quote-left pr-2"></i>At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti.</p>
-        <!--Review-->
-        <div class="orange-text">
-          <i class="fas fa-star"> </i>
-          <i class="fas fa-star"> </i>
-          <i class="fas fa-star"> </i>
-          <i class="fas fa-star"> </i>
-          <i class="far fa-star"> </i>
-        </div>
-      </div>
-
-    </div>
-    <!--Grid column-->
-
-  </div>
-  <!--Grid row-->
-
-</section>
-<!-- Section: Testimonials v.3 -->
-        </div>
-
     </body>
 
-<!-- Footer
-<footer class="page-footer font-small blue-grey lighten-5">
+
+            <!-- Footer -->
+            <footer class="footer">
+            <nav class="navbar fixed-bottom navbar-light bg-warning sticky-top">
+              <div class="container text-center">
+
+                <div class="row">
+
+                    <h6 class="text-uppercase font-weight-bold">
+                      <button type="button" class="btn btn-link" id="aboutus">About Us</button>
+                    </h6>
 
 
-  <div class="container">
+
+                    <h6 class="text-uppercase font-weight-bold">
+                      <button type="button" class="btn btn-link" id="followus">Follow Us</button>
+                    </h6>
 
 
-    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                      <button type="button" class="btn btn-link" id="contact">Contact</button>
+                    </h6>
 
+                </div>
+            </nav>
+            </footer>
 
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <button type="button" class="btn btn-link" id="aboutus">About Us</button>
-        </h6>
-      </div>
-
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <button type="button" class="btn btn-link" id="followus">Follow Us</button>
-        </h6>
-      </div>
-
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <button type="button" class="btn btn-link" id="contact">Contact</button>
-        </h6>
-      </div>
-    </div>
-</footer> -->
-
-<!-- Footer -->
-<footer class="footer">
-<nav class="navbar fixed-bottom navbar-light bg-warning sticky-top">
-  <div class="container">
-    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
-
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <button type="button" class="btn btn-link" id="aboutus">About Us</button>
-        </h6>
-      </div>
-
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <button type="button" class="btn btn-link" id="followus">Follow Us</button>
-        </h6>
-      </div>
-
-      <div class="col-md-2 mb-3">
-        <h6 class="text-uppercase font-weight-bold">
-          <button type="button" class="btn btn-link" id="contact">Contact</button>
-        </h6>
-      </div>
-    </div>
-</nav>
-</footer>
 </html>

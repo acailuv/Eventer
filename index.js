@@ -1,7 +1,26 @@
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
+//Database
+// const MongoClient = require('mongodb').MongoClient;
+// const url = "mongodb://127.0.0.1:27017/eventerdb";
+//
+// MongoClient.connect(url, function searchUser (err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("eventerdb");
+//   var query = { username: "Noach",
+//                 password: "aserehe",
+//                 email: "email@email.com"
+//                 };
+//   dbo.collection("customers").find(query).toArray(function(err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     db.close();
+//   });
+// });
 
+
+//
 app.use(express.static(__dirname));
 
 app.get('/', function(req, res) {
@@ -15,6 +34,13 @@ app.get('/login.html', function(req, res) {
 app.get('/register.html', function(req, res) {
     res.sendFile(__dirname + '/html/register.html');
 });
+
+//eomain
+app.get('/eomain.html', function(req, res) {
+    res.sendFile(__dirname + '/html/eomain.html');
+});
+
+
 
 //Footer
 app.get('/aboutus.html', function(req, res) {

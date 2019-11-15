@@ -10,6 +10,13 @@ $(document).ready(function() {
     });
 });
 
+//eomain
+$(document).ready(function() {
+    $('#eomain').on('click', function() {
+        $('#main').load('/eomain.html');
+    });
+});
+
 
 // footer
 $(document).ready(function() {
@@ -29,3 +36,5 @@ $(document).ready(function() {
         $('#main').load('/contact.html');
     });
 });
+
+// Trending
