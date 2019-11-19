@@ -1,12 +1,18 @@
 $(document).ready(function() {
     $('#login').on('click', function() {
-        $('#main').load('/login.html');
+        $('#main').load('./login.html');
     });
 });
 
 $(document).ready(function() {
-    $('#register').on('click', function() {
-        $('#main').load('/register.html');
+    $('#vendor').on('click', function() {
+        $('#main').load('./vendor.html');
+    });
+});
+
+$(document).ready(function() {
+    $('#user').on('click', function() {
+        $('#main').load('./user.html');
     });
 });
 
@@ -14,18 +20,25 @@ $(document).ready(function() {
 // footer
 $(document).ready(function() {
     $('#aboutus').on('click', function() {
-        $('#main').load('/aboutus.html');
+        $('#main').load('./aboutus.html');
     });
 });
 
 $(document).ready(function() {
     $('#followus').on('click', function() {
-        $('#main').load('/followus.html');
+        $('#main').load('./followus.html');
     });
 });
 
 $(document).ready(function() {
     $('#contact').on('click', function() {
-        $('#main').load('/contact.html');
+        $('#main').load('./contact.html');
+    });
+});
+
+//eomain
+$(document).ready(function() {
+    $('#eomain').on('click', function() {
+        $('#main').load('./eomain.html');
     });
 });
