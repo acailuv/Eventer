@@ -1,8 +1,16 @@
-html{
+html {
   scroll-behavior: smooth;
 }
 
 #main {
     background: whitesmoke;
-    min-height: 85vh;
+    min-height: 88vh;
+}
+
+@font-face {
+  font-family: 'poiret_oneregular';
+  src: url('/fonts/poiretone-regular-webfont.woff2') format('woff2'),
+       url('/fonts/poiretone-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
