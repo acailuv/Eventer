@@ -3,8 +3,20 @@ html {
 }
 
 #main {
-    background: whitesmoke;
-    min-height: 88vh;
+    background: white;
+    min-height: 90vh;
+}
+.delay-025s {
+    animation-delay: .25s;
+}
+.delay-05s {
+    animation-delay: .5s;
+}
+.delay-075s {
+    animation-delay: .75s;
+}
+.delay-1s {
+    animation-delay: 1s;
 }
 
 @font-face {

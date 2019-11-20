@@ -1,44 +1,27 @@
-$(document).ready(function() {
-    $('#login').on('click', function() {
-        $('#main').load('/html/login.html');
-    });
-});
+function redirectTo_User() {
+    $('#main').load('/html/user.html');
+    $('#session_write').load('/php/current_page.php?current_page=/html/user.html');
+    window.scrollTo(0, 0);
+}
 
-$(document).ready(function() {
-    $('#vendor').on('click', function() {
-        $('#main').load('/html/vendor.html');
-    });
-});
+function redirectTo_Vendor() {
+    $('#main').load('/html/vendor.html');
+    $('#session_write').load('/php/current_page.php?current_page=/html/vendor.html');
+    window.scrollTo(0, 0);
+}
 
-$(document).ready(function() {
-    $('#user').on('click', function() {
-        $('#main').load('/html/user.html');
-    });
-});
+function redirectTo_Login() {
+    $('#main').load('/html/login.html');
+    $('#session_write').load('/php/current_page.php?current_page=/html/login.html');
+    window.scrollTo(0, 0);
+}
 
+function redirectTo_Index() {
+    $('#session_write').load('/php/current_page.php?current_page=/index.php');
+    window.location.replace('/index.php');
+    window.scrollTo(0, 0);
+}
 
-// footer
-$(document).ready(function() {
-    $('#aboutus').on('click', function() {
-        $('#main').load('/html/aboutus.html');
-    });
-});
-
-$(document).ready(function() {
-    $('#followus').on('click', function() {
-        $('#main').load('/html/followus.html');
-    });
-});
-
-$(document).ready(function() {
-    $('#contact').on('click', function() {
-        $('#main').load('/html/contact.html');
-    });
-});
-
-//eomain
-$(document).ready(function() {
-    $('#eomain').on('click', function() {
-        $('#main').load('/html/eomain.html');
-    });
-});
+function syncMainDiv(current_page) {
+    $('#main').load(current_page);
+}
