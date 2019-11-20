@@ -1,7 +1,7 @@
 <?php
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    $userName = $_POST['userName'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $user_name = $_POST['user_name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -9,11 +9,12 @@
     if($conn->connect_error){
     die('Connection Failed : '.$conn->connect_error);
     }else{
-    $stmt = $conn->prepare("INSERT INTO user(firstName, lastName, userName, email, password)
+    $stmt = $conn->prepare("INSERT INTO user(first_name, last_name, user_name, email, password)
     values(?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss",$firstName, $lastName, $userName, $email, $password);
+    $stmt->bind_param("sssss",$first_name, $last_name, $user_name, $email, $password);
     $done = $stmt->execute();
-    if ($done) header("Location:/html/index.html");
+    //nanti ke page yang bagusan dikit kali yak habis login
+    if ($done) header("Location:../index.php");
     $stmt->close();
     $conn->close();
     }

@@ -3,49 +3,49 @@
 
     <body>
         <div class="container animated fadeInDown" style="padding: 10%;">
-            <form class="border rounded border-light p-5 bg-light" action="../vendor.php" method="post">
+            <form class="border rounded border-light p-5 bg-light" action="/php/vendor.php" method="post">
                 <p class="h4 mb-4">SIGN UP AS VENDOR</p>
-                <input type="text" id="companyName" class="form-control mb-4" placeholder="Name of the Company" name="companyName" required>
-                <input type="text" id="officeAddress" class="form-control mb-4" placeholder="Office Address" name="officeAddress" required>
-                <input type="text" id="contactPerson" class="form-control mb-4" placeholder="Contact Person" name="contactPerson" required>
-                <input type="text" id="telNumber" class="form-control mb-4" placeholder="Telephone Number" name="telNumber" required>
-                <input type="text" id="bln" class="form-control mb-4" placeholder="Business License Number" name="bln" required>
+                <input type="text" id="companyName" class="form-control mb-4" placeholder="Name of the Company" name="company_name" required>
+                <input type="text" id="officeAddress" class="form-control mb-4" placeholder="Office Address" name="office_address" required>
+                <input type="text" id="contactPerson" class="form-control mb-4" placeholder="Contact Person" name="contact_person" required>
+                <input type="text" id="telNumber" class="form-control mb-4" placeholder="Telephone Number" name="tel_number" required>
+                <input type="text" id="bln" class="form-control mb-4" placeholder="Business License Number" name="bussiness_number" required>
                 <input type="text" id="personel" class="form-control mb-4" placeholder="Number of Personel" name="personel" required>
                 <p>Event Organization Type</p>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="birthday" id="birthday" name="orgType">
+                    <input class="form-check-input" type="radio" value="birthday" id="birthday" name="orgType[]">
                     <label class="form-check-label" for="birthday"> Birthday </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="baptism" id="baptism" name="orgType">
+                    <input class="form-check-input" type="radio" value="baptism" id="baptism" name="orgType[]">
                     <label class="form-check-label" for="baptism"> Baptsim </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="wedding" id="wedding" name="orgType">
+                    <input class="form-check-input" type="radio" value="wedding" id="wedding" name="orgType[]">
                     <label class="form-check-label" for="wedding"> Wedding </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="babyshower" id="babyshower" name="orgType">
+                    <input class="form-check-input" type="radio" value="babyshower" id="babyshower" name="orgType[]">
                     <label class="form-check-label" for="babyshower"> Baby Shower </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="tradeshows" id="tradeshows" name="orgType">
+                    <input class="form-check-input" type="radio" value="tradeshows" id="tradeshows" name="orgType[]">
                     <label class="form-check-label" for="tradeshows"> Trade Shows </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="sports" id="sports" name="orgType">
+                    <input class="form-check-input" type="radio" value="sports" id="sports" name="orgType[]">
                     <label class="form-check-label" for="sports"> Sports </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="productlaunch" id="productlaunch" name="orgType">
+                    <input class="form-check-input" type="radio" value="productlaunch" id="productlaunch" name="orgType[]">
                     <label class="form-check-label" for="productlaunch"> Product Launch </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="boardmeetings" id="boardmeetings" name="orgType">
+                    <input class="form-check-input" type="radio" value="boardmeetings" id="boardmeetings" name="orgType[]">
                     <label class="form-check-label" for="boardmeetings"> Board Meetings </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="anniversary" id="anniversary" name="orgType">
+                    <input class="form-check-input" type="radio" value="anniversary" id="anniversary" name="orgType[]">
                     <label class="form-check-label" for="anniversary"> Anniversary </label>
                 </div>
                 <br>
