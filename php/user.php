@@ -13,8 +13,13 @@
     values(?, ?, ?, ?, ?)");
     $stmt->bind_param("sssss",$first_name, $last_name, $user_name, $email, $password);
     $done = $stmt->execute();
-    //nanti ke page yang bagusan dikit kali yak habis login
-    if ($done) header("Location:../index.php");
+    if ($done) {
+      session_start();
+      $_SESSION['current_page'] = "/index.php";
+      header("location:../index.php");
+    }else{
+      echo "ERROR";
+    }
     $stmt->close();
     $conn->close();
     }
