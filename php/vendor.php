@@ -7,6 +7,7 @@ if(isset($_POST['submit'])){
   $tel_number = $_POST['tel_number'];
   $org_type = $_POST['org_type'];
   $email = $_POST['email'];
+  $user_name = $_POST['user_name'];
   $password = $_POST['password'];
   $orgs="";
   foreach($org_type as $check){
@@ -19,10 +20,10 @@ if(isset($_POST['submit'])){
     die('Connection Failed : '.$conn->connect_error);
   }else{
     $stmt = $conn->prepare("INSERT INTO vendor(company_name, office_address, contact_person,
-      tel_number, org_type, email, password)
-      values(?, ?, ?, ?, ?, ?, ?)");
-      $stmt->bind_param("sssisss",$company_name, $office_address, $contact_person, $tel_number,
-       $orgs, $email, $password);
+      tel_number, org_type, email, user_name, password)
+      values(?, ?, ?, ?, ?, ?, ?, ?)");
+      $stmt->bind_param("sssissss",$company_name, $office_address, $contact_person, $tel_number,
+       $orgs, $email, $user_name, $password);
       $done = $stmt->execute();
       if ($done){
         session_start();

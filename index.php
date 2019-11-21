@@ -42,16 +42,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <!-- Search Bar -->
-            <form class="form-inline" style="margin-right: 24px;" action="/php/search.php">
+            <form class="form-inline" style="margin-right: 24px;" action="/php/eolist.php" method="post">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="What's on your mind?" size="56">
+                    <input type="text" class="form-control" name ="search" placeholder="What's on your mind?" size="56">
                     <div class="input-group-append">
-                        <button class="btn btn-primary">Search</button>
+                        <button class="btn btn-primary" type="submit" id="search" value="search" onclick="redirectTo_eolist()">Search</button>
                     </div>
                 </div>
             </form>
             <!-- END -->
-            
+
             <li class="nav-item">
                 <button class="btn btn-outline-dark" onclick="redirectTo_User()">Sign Up</button>
             </li>
@@ -65,7 +65,7 @@
   <!-- Navbar END -->
 
   <div class="container-fluid" id="main">
-    
+
     <div class="container">
         <br>
         <br>
@@ -74,7 +74,7 @@
         <div class="row">
             <div class="col-sm-8">
                 <p class="animated fadeInUp delay-1s">
-                    Eventer gives you what you want whether you are a client or an event organizer. 
+                    Eventer gives you what you want whether you are a client or an event organizer.
                     Wherever you are, wherever you go, Rest easy with eventer. Whether it is a birthday,
                     a plain meeting, or even an unforgetable wedding ceremony, hundreds of talented
                     event organizers will be at your service gladly, gracefully. Always.
@@ -117,7 +117,7 @@
         <button type="button" class="btn btn-success wow fadeInUp delay-05s" onclick="redirectTo_User()">Get Started!</button>
     </div>
   </div>
-  
+
   <div id="session_write"></div>
   <?php
     session_start();

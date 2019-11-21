@@ -2,8 +2,8 @@
 <html>
     <body>
         <div class="container animated fadeInDown" style="padding: 10%;">
-            <form class="border rounded border-light p-5 bg-light" action="/php/login.php" method="post">
-                <p class="h4 mb-4">SIGN IN AS USER</p>
+            <form class="border rounded border-light p-5 bg-light" action="/php/vendorlogin.php" method="post">
+                <p class="h4 mb-4">SIGN IN AS VENDOR</p>
                 <!-- Username -->
                 <input type="username" id="user_name" class="form-control mb-4" placeholder="Username" name="user_name" required>
                 <!-- Password -->
@@ -11,8 +11,7 @@
                 <br>
                 <!-- Sign in button -->
                 <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign In</button>
-                Not a member? <button type="button" class="btn btn-link" onclick="redirectTo_User()">Sign Up Here.</button><br>
-                Sign In as Vendor <button type="button" class="btn btn-link" onclick="redirectTo_vendorLogin()">Sign In Here</button>
+                Not a member? <button type="button" class="btn btn-link" onclick="redirectTo_Vendor()">Register as Vendor Here.</button>
             </form>
         </div>
     </body>
