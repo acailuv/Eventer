@@ -2,13 +2,25 @@ html {
   scroll-behavior: smooth;
 }
 
-#main {
-    background: white;
-    min-height: 90vh;
+body {
+    padding-top: 65px;
 }
 
 a {
-    color: cyan;
+    color: rgb(0, 100, 255);
+}
+
+.main-container {
+    margin: 144px;
+    margin-top:48px;
+}
+
+.shop-card {
+    margin: 12px;
+}
+
+.shop-card-description {
+    text-align: justify;
 }
 
 .delay-025s {

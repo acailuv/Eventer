@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="/js/main.js"></script>
@@ -8,41 +9,37 @@
     <body>
         <div data-include-php="navbar"></div>
 
-        <div class="container animated fadeInDown" style="padding: 10%;">
-            <form class="border rounded border-light p-5 rounded bg-light" action="/php/user.php" method="post">
-                <p class="h4 mb-4">SIGN UP AS USER</p>
+        <div class="container animated fadeInDown" style="padding: 10%; margin-top: -5%">
+            <form class="border rounded border-light p-5 rounded bg-light" action="/php/edituser.php" method="post">
+                <p class="h4 mb-4">EDIT USER DETAILS</p>
                 <div class="row">
                     <div class="col-sm">
-                        <!-- Firstname -->
+                        <!-- The placeholder of this will be the old first name -->
                         <label for="first_name">First Name</label>
                         <input type="text" id="first_name" class="form-control mb-4" placeholder="John" name="first_name" required>
                     </div>
 
                     <div class="col-sm">
-                        <!-- Lastname -->
+                        <!-- The placeholder of this will be the old last name, etc. -->
                         <label for="last_name">Last Name</label>
                         <input type="text" id="last_name" class="form-control mb-4" placeholder="Smith" name="last_name" required>
                     </div>
                 </div>
-                <!-- Username -->
                 <label for="user_name">Username</label>
                 <input type="text" id="user_name" class="form-control mb-4" placeholder="johnsmith" name="user_name" required>
-                <!-- Email -->
                 <label for="email">Email</label>
                 <input type="text" id="email" class="form-control mb-4" placeholder="example@email.com" name="email" required>
-                <!-- Password -->
                 <label for="password">Password</label>
                 <input type="password" id="password" class="form-control mb-4" placeholder="Password" name="password" required>
-                <!-- Password Confirmation -->
                 <label for="password_confirm">Password Confirmation</label>
                 <input type="password" id="password_confirm" class="form-control mb-4" placeholder="Password Confirmation" name="password_confirm" required>
                 <br>
-                <!-- Sign in button -->
-                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign Up</button>
-                Sign Up as a Vendor? <a href="/html/vendor.html">Click Here.</a><br>
-                Already a member? <a href="html/login.html">Click Here.</a>
+                <i>*If you do not wish to change certain details, just leave it empty and we will do the rest.</i>
+                <!-- NOTE: USER CAN LEAVE THE FORM EMPTY (REMAINS THE SAME) -->
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Edit Details</button>
             </form>
         </div>
+
     </body>
 
 </html>

@@ -10,8 +10,8 @@
         <div data-include-php="navbar"></div>
 
         <div class="container animated fadeInDown" style="padding: 10%;">
-            <form class="border rounded border-light p-5 bg-light" action="/php/vendor.php" method="post">
-                <p class="h4 mb-4">SIGN UP AS VENDOR</p>
+            <form class="border rounded border-light p-5 bg-light" action="/php/editvendor.php" method="post">
+                <p class="h4 mb-4">EDIT VENDOR DETAILS</p>
                 <label class="form-check-label" for="user_name">Username</label>
                 <input type="text" id="user_name" class="form-control mb-4" placeholder="johnsmith" name="user_name" required>
                 <label class="form-check-label" for="email">Email</label>
@@ -77,11 +77,12 @@
                     <label class="form-check-label" for="general"> General </label>
                 </div>
                 <br>
-                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="submit" name="submit">Register</button>
-                Sign Up as a User? <a href="/html/user.html">Click Here.</a><br>
-                Already a Member? <a href="/html/login.html">Click Here.</a>
+                <i>*If you do not wish to change certain details, just leave it empty and we will do the rest.</i
+                <!-- NOTE: USER CAN LEAVE THE FORM EMPTY (REMAINS THE SAME) -->
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="submit" name="submit">Edit Details</button>
             </form>
         </div>
+
     </body>
 
 </html>

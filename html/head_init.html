@@ -5,12 +5,15 @@
 <link rel="icon" href="/favicon.png">
 
 <!-- JavaScript -->
-<!-- <script src="/js/jquery-min.js"></script> -->
 <script src="/js/popper-min.js"></script>
 <script src="/js/bootstrap-min.js"></script>
 <script src="/js/wow.js"></script>
 <script>
-    new WOW().init();
+    try {
+        new WOW().init();
+    } catch (error) {
+        // do nothing
+    }
 </script>
 
 <!-- CSS -->

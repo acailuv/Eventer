@@ -1,6 +1,6 @@
 <?php
 $user_name = $_POST['vendor_id'];
-$password = $_POST['password'];
+$password = $_POST['vendor_pwd'];
 
 $conn = mysqli_connect('localhost', 'root', 'root', 'eventer');
 if ($conn->connect_error) {
@@ -13,11 +13,10 @@ if ($conn->connect_error) {
     if ($check > 0) {
         session_start();
         $_SESSION['username'] = $user_name;
-        $_SESSION['status'] = "login";
+        $_SESSION['status'] = "vendor";
         header("location:/index.php");
     } else {
-        echo "<script>alert('Wrong Username or Password.');</script>";
-        header("location:/html/login.html");
+        echo "<script>alert('Wrong Username or Password.'); window.location.href='/html/login.html'</script>";
     }
     $conn->close();
 }
