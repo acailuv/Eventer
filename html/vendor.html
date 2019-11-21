@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="/js/main.js"></script>
+    </head>
+
     <body>
+        <div data-include="navbar"></div>
+
         <div class="container animated fadeInDown" style="padding: 10%;">
             <form class="border rounded border-light p-5 bg-light" action="/php/vendor.php" method="post">
                 <p class="h4 mb-4">SIGN UP AS VENDOR</p>
@@ -61,8 +68,8 @@
                 <input type="password" id="password" class="form-control mb-4" placeholder="Password" name="password" required>
                 <br>
                 <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="submit" name="submit">Register</button>
-                Want to Sign Up as a User? <button type="button" class="btn btn-link" onclick="redirectTo_User()">Click Here.</button><br>
-                Already a member? <button type="button" class="btn btn-link" onclick="redirectTo_Login()">Click Here.</button>
+                Sign Up as a User? <a href="/html/user.html">Click Here.</a><br>
+                Already a Member? <a href="/html/login.html">Click Here.</a>
             </form>
             </div>
         </div>

@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="/js/main.js"></script>
+    </head>
+
     <body>
-        <div class="container animated fadeInDown" style="padding: 10%;">
-            <form class="border rounded border-light p-5 bg-light" action="/php/login.php" method="post">
-                <p class="h4 mb-4">SIGN IN AS USER</p>
-                <!-- Username -->
-                <input type="username" id="user_name" class="form-control mb-4" placeholder="Username" name="user_name" required>
-                <!-- Password -->
-                <input type="password" id="password" class="form-control mb-4" placeholder="Password" name="password" required>
-                <br>
-                <!-- Sign in button -->
-                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign In</button>
-                Not a member? <button type="button" class="btn btn-link" onclick="redirectTo_User()">Sign Up Here.</button><br>
-                Sign In as Vendor <button type="button" class="btn btn-link" onclick="redirectTo_vendorLogin()">Sign In Here</button>
-            </form>
+        <div data-include="navbar"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm animated fadeInDown" style="padding: 10%;">
+                    <form class="border rounded border-light p-5 bg-light" action="/php/login.php" method="post">
+                        <p class="h4 mb-4">SIGN IN AS USER</p>
+                        <!-- Username -->
+                        <input type="username" id="user_id" class="form-control mb-4" placeholder="Username" name="user_id" required>
+                        <!-- Password -->
+                        <input type="password" id="user_pwd" class="form-control mb-4" placeholder="Password" name="user_pwd" required>
+                        <br>
+                        <!-- Sign in button -->
+                        <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign In</button>
+                        User Sign Up <a href="/html/user.html">Here.</a><br>
+                    </form>
+                </div>
+                <div class="col-sm animated fadeInDown" style="padding: 10%;">
+                    <form class="border rounded border-light p-5 bg-light" action="/php/vendorlogin.php" method="post">
+                        <p class="h4 mb-4">SIGN IN AS VENDOR</p>
+                        <!-- Username -->
+                        <input type="username" id="vendor_id" class="form-control mb-4" placeholder="Username" name="vendor_id" required>
+                        <!-- Password -->
+                        <input type="password" id="vendor_pwd" class="form-control mb-4" placeholder="Password" name="vendor_pwd" required>
+                        <br>
+                        <!-- Sign in button -->
+                        <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign In</button>
+                        Vendor Sign Up <a href="vendor.html">Here.</a>
+                    </form>
+                </div>
+            </div>
         </div>
     </body>
 

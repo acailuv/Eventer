@@ -6,6 +6,11 @@ html {
     background: white;
     min-height: 90vh;
 }
+
+a {
+    color: cyan;
+}
+
 .delay-025s {
     animation-delay: .25s;
 }
