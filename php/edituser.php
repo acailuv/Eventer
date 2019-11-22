@@ -1,3 +1,33 @@
+<?php
+
+if (isset($_POST['submit'])) {
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+$conn = new mysqli('localhost','root','root','eventer');
+if($conn->connect_error){
+  die('Connection Failed : '.$conn->connect_error);
+}else{
+  $stmt = $conn->prepare("UPDATE user SET first_name='$first_name', last_name='$last_name', email='$email', password='$password' WHERE id = '4'") or die("Query failed.");
+    $done = $stmt->execute();
+    if ($done){
+      session_start();
+      $_SESSION['current_page'] = "/index.php";
+      header("location:/index.php");
+    }else{
+      echo "ERROR";
+    }
+    $stmt->close();
+    $conn->close();
+}
+
+
+}
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,8 +55,6 @@
                         <input type="text" id="last_name" class="form-control mb-4" placeholder="Smith" name="last_name" required>
                     </div>
                 </div>
-                <label for="user_name">Username</label>
-                <input type="text" id="user_name" class="form-control mb-4" placeholder="johnsmith" name="user_name" required>
                 <label for="email">Email</label>
                 <input type="text" id="email" class="form-control mb-4" placeholder="example@email.com" name="email" required>
                 <label for="password">Password</label>
@@ -36,7 +64,7 @@
                 <br>
                 <i>*If you do not wish to change certain details, just leave it empty and we will do the rest.</i>
                 <!-- NOTE: USER CAN LEAVE THE FORM EMPTY (REMAINS THE SAME) -->
-                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Edit Details</button>
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="submit" name="submit">Edit Details</button>
             </form>
         </div>
 

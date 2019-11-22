@@ -1,3 +1,46 @@
+<?php
+
+    if (isset($_POST['submit'])) {
+        $company_name = $_POST['company_name'];
+        $office_address = $_POST['office_address'];
+        $contact_person = $_POST['contact_person'];
+        $tel_number = $_POST['tel_number'];
+        $org_type = $_POST['org_type'];
+        $email = $_POST['email'];
+
+        $password = $_POST['password'];
+        $orgs="";
+        foreach($org_type as $check){
+
+          $orgs .= $check.",";
+        }
+
+    $conn = new mysqli('localhost','root','root','eventer');
+    if($conn->connect_error){
+      die('Connection Failed : '.$conn->connect_error);
+    }else{
+      $stmt = $conn->prepare("UPDATE vendor SET company_name='$company_name', office_address='$office_address', contact_person='$contact_person',
+          tel_number='$tel_number', org_type='$orgs', email='$email', password='$password' WHERE id = '15'") or die("Query failed.");
+        $done = $stmt->execute();
+        if ($done){
+          session_start();
+          $_SESSION['current_page'] = "/index.php";
+          header("location:/index.php");
+        }else{
+          echo "ERROR";
+        }
+        $stmt->close();
+        $conn->close();
+    }
+
+
+}
+
+
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,19 +56,19 @@
             <form class="border rounded border-light p-5 bg-light" action="/php/editvendor.php" method="post">
                 <p class="h4 mb-4">EDIT VENDOR DETAILS</p>
                 <label class="form-check-label" for="user_name">Username</label>
-                <input type="text" id="user_name" class="form-control mb-4" placeholder="johnsmith" name="user_name" required>
+                
                 <label class="form-check-label" for="email">Email</label>
-                <input type="email" id="email" class="form-control mb-4" placeholder="example@email.com" name="email" required>
+                <input type="email" id="email" class="form-control mb-4" placeholder="example@email.com" name="email">
                 <label class="form-check-label" for="password">Password</label>
-                <input type="password" id="password" class="form-control mb-4" placeholder="Password" name="password" required>
+                <input type="password" id="password" class="form-control mb-4" placeholder="Password" name="password" >
                 <label class="form-check-label" for="company_name">Company Name</label>
-                <input type="text" id="company_name" class="form-control mb-4" placeholder="Willowing Crane Co." name="company_name" required>
+                <input type="text" id="company_name" class="form-control mb-4" placeholder="Willowing Crane Co." name="company_name" >
                 <label class="form-check-label" for="office_address">Office Address</label>
-                <input type="text" id="office_address" class="form-control mb-4" placeholder="Grandwater Ave. 05" name="office_address" required>
+                <input type="text" id="office_address" class="form-control mb-4" placeholder="Grandwater Ave. 05" name="office_address" >
                 <label class="form-check-label" for="contact_person">Contact Person</label>
-                <input type="text" id="contact_person" class="form-control mb-4" placeholder="John Smith" name="contact_person" required>
+                <input type="text" id="contact_person" class="form-control mb-4" placeholder="John Smith" name="contact_person" >
                 <label class="form-check-label" for="tel_number">Contact Person Telephone Number</label>
-                <input type="text" id="tel_number" class="form-control mb-4" placeholder="+13657894" name="tel_number" required>
+                <input type="text" id="tel_number" class="form-control mb-4" placeholder="+13657894" name="tel_number" >
                 <p>Specialties</p>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="birthday" id="birthday" name="org_type[]">

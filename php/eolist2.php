@@ -1,6 +1,6 @@
 <?php function createCard(array $rows) { ?>
 
-  <div class="col-sm" style="padding-top:50px">
+  <div class="col-sm" style="padding-top:20px">
     <div class="container animated fadeInDown">
       <div class="card" style="width: 18rem;">
         <img src="/img/placeholder.png" class="card-img-top" alt="...">
@@ -28,7 +28,7 @@
         <div data-include-php="navbar"></div>
 
         <div class="container">
-          <div class="row" style="padding-top:100px; padding-left:25px; padding-bottom:50px">
+          <div class="row" style="padding-top:80px; padding-left:25px; padding-bottom:50px">
             <?php
             // session_start();
             //
@@ -37,18 +37,36 @@
             //         echo "This is category_search";}
 
             $conn = mysqli_connect('localhost','root','root','eventer');
-            $get = $_POST['search'];
-            if($get){
-              $show = "SELECT * FROM vendor WHERE company_name = '$get'";
-              $result = mysqli_query($conn, $show);
-              if($result->num_rows > 0){
-                while ($rows = mysqli_fetch_array($result)){
-                  createCard($rows);
-                }
-              }
-            }else{
-              echo "NOTHING FOUND";
+            if(isset($_POST['category_search'])){
+                $category_search = $_POST['category_search'];
+                $query = "SELECT * FROM vendor WHERE org_type  = '$category_search'";
+                $result = mysqli_query($conn, $query);
+                    if($result->num_rows > 0 ){
+                        while($rows = mysqli_fetch_array($result)){
+                            createCard($rows);
+                        }
+                    }
             }
+
+
+
+
+
+
+
+
+            // $get = $_POST['category_search'];
+            // if($get){
+            //   $show = "SELECT * FROM vendor WHERE org_type = '$get'";
+            //   $result = mysqli_query($conn, $show);
+            //   if($result->num_rows > 0){
+            //     while ($rows = mysqli_fetch_array($result)){
+            //       createCard($rows);
+            //     }
+            //   }
+            // }else{
+            //   echo "NOTHING FOUND";
+            // }
              ?>
             </div>
           </div>

@@ -14,19 +14,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav ml-auto">
                     <!-- Category Search -->
-                    <form class="form-inline" style="margin-right: 24px;" action="" method="post">
+                    <form class="form-inline" style="margin-right: 24px;" action="/php/eolist2.php" method="post">
                         <label for="category_search" class="bg-dark text-light rounded-left" style="padding: 7px; margin-right: -4px; z-index: 1;">Search by Category</label>
-                        <select class="form-control rounded 0" id="category_search">
-                            <option>Birthday</option>
-                            <option>Baptism</option>
-                            <option>Wedding</option>
-                            <option>Baby Shower</option>
-                            <option>Trade Shows</option>
-                            <option>Sports</option>
-                            <option>Product Launch</option>
-                            <option>Board Meetings</option>
-                            <option>Anniversary</option>
-                            <option>Show All</option>
+                        <select class="form-control rounded 0" id="category_search" name="category_search">
+                            <option value="" disabled selected hidden>
+                                Category
+                            </option>
+                            <option value="birthday">Birthday</option>
+                            <option value="baptism">Baptism</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="babyshower">Baby Shower</option>
+                            <option value="tradeshows">Trade Shows</option>
+                            <option value="sports">Sports</option>
+                            <option value="productlaunch">Product Launch</option>
+                            <option value="boardmeetings">Board Meetings</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="general">Show All</option>
                         </select>
                         <div class="input-group-append">
                             <button class="btn btn-dark" type="submit" id="search" value="search">Search</button>

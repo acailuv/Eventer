@@ -1,3 +1,28 @@
+<?php
+session_start();
+$conn = mysqli_connect("localhost", "root", "root", "eventer");
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT * FROM user WHERE user_name = '$_SESSION[username]'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+// output data of each row
+while($rows = $result->fetch_assoc()) {
+    $id = $rows ['id'];
+    $firstname = $rows ['first_name'];
+    $lastname = $rows ['last_name'];
+    $username = $rows ['user_name'];
+    $email = $rows ['email'];
+    }
+} else { echo "0 results"; }
+$conn->close();
+
+
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,11 +36,11 @@
         <div class="container animated fadeInUp delay-05s main-container">
             <div class='bg-light rounded p-5'>
                 <h1>About You.</h1>
-                <p>User ID: ...</p>
-                <p>Name: ...</p>
-                <p>Username: ...</p>
-                <p>Email: ...</p>
-                <a href="/html/edituser.html">Edit Profile</a>
+                <p>User ID: <?php echo $id ?> </p>
+                <p>Name: <?php echo $firstname , " " , $lastname ?> </p>
+                <p>Username: <?php echo $username ?> </p>
+                <p>Email: <?php echo $email ?> </p>
+                <a href="/php/edituser.php">Edit Profile</a>
             </div>
 
             <br>

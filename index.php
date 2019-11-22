@@ -12,6 +12,7 @@
 
     Front-End:
     > Clear at the moment
+    > Shop Page 
 
     Back-end:
     > Category Search

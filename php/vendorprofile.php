@@ -1,3 +1,31 @@
+<?php
+session_start();
+$conn = mysqli_connect("localhost", "root", "root", "eventer");
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT * FROM vendor WHERE user_name = '$_SESSION[username]'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+// output data of each row
+while($rows = $result->fetch_assoc()) {
+    $id = $rows ['id'];
+    $name = $rows ['company_name'];
+    $address = $rows ['office_address'];
+    $username = $rows ['user_name'];
+    $contact = $rows ['contact_person'];
+    $telephone = $rows ['tel_number'];
+    $email = $rows ['email'];
+    $org = $rows ['org_type'];
+}
+} else { echo "0 results"; }
+$conn->close();
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,20 +41,20 @@
                 <h1>About You as a <u>Vendor</u>.</h1>
                 <br>
                 <h3>Basic Information</h3>
-                <p>Vendor ID: ...</p>
-                <p>Company Name: ...</p>
-                <p>Address: ...</p>
-                <p>Username: ...</p>
+                <p>Vendor ID: <?php echo $id; ?> </p>
+                <p>Company Name: <?php echo $name; ?> </p>
+                <p>Address: <?php echo $address; ?> </p>
+                <p>Username: <?php echo $username; ?> </p>
                 <h3>Contact Details</h3>
-                <p>Contact Person: ...</p>
-                <p>Telephone Number: ...</p>
-                <p>Email: ...</p>
+                <p>Contact Person: <?php echo $contact; ?> </p>
+                <p>Telephone Number: <?php echo $telephone; ?></p>
+                <p>Email: <?php echo $email; ?></p>
                 <h3>Specialties</h3>
                 <ul>
-                    <li>Wedding</li>
-                    <li>...</li>
+                    <li><?php echo $org; ?></li>
+
                 </ul>
-                <a href="#">Edit Profile</a>
+                <a href="/php/editvendor.php">Edit Profile</a>
             </div>
 
             <br>
