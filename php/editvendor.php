@@ -53,10 +53,10 @@
         <div data-include-php="navbar"></div>
 
         <div class="container animated fadeInDown" style="padding: 10%;">
-            <form class="border rounded border-light p-5 bg-light" action="/php/editvendor.php" method="post">
+            <form class="border rounded border-warning p-5 bg-light" action="/php/editvendor.php" method="post">
                 <p class="h4 mb-4">EDIT VENDOR DETAILS</p>
                 <label class="form-check-label" for="user_name">Username</label>
-                
+
                 <label class="form-check-label" for="email">Email</label>
                 <input type="email" id="email" class="form-control mb-4" placeholder="example@email.com" name="email">
                 <label class="form-check-label" for="password">Password</label>
@@ -120,7 +120,7 @@
                     <label class="form-check-label" for="general"> General </label>
                 </div>
                 <br>
-                <i>*If you do not wish to change certain details, just leave it empty and we will do the rest.</i
+                <i>*If you do not wish to change certain details, just leave it empty and we will do the rest.</i>
                 <!-- NOTE: USER CAN LEAVE THE FORM EMPTY (REMAINS THE SAME) -->
                 <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="submit" name="submit">Edit Details</button>
             </form>

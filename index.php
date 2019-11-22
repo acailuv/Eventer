@@ -11,15 +11,13 @@
     =======================================
 
     Front-End:
-    > Clear at the moment
-    > Shop Page 
+    > Shop Page
+    > 
 
     Back-end:
-    > Category Search
-    > Search By Name
+    > Category Search (NOT FOUND message should appear when there is nothing to show)
+    > Search By Name (NOT FOUND message should appear when there is nothing to show)
     > New EO category -> General (in Vendor Registration [vendor.html])
-    > Populate Profile User + Vendor
-    > Integrate to eolist front end
     > Tracking history
     > update profile user+vendor
 

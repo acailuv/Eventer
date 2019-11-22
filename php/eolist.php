@@ -27,31 +27,47 @@
     <body>
         <div data-include-php="navbar"></div>
 
-        <div class="container">
-          <div class="row" style="padding-top:100px; padding-left:25px; padding-bottom:50px">
+        <div class="container main-container">
+            <div class="row" style="padding-top:100px; padding-left:25px; padding-bottom:50px">
             <?php
-            // session_start();
-            //
-            //  $type = $_GET['type'];
-            //     if ($type == 'category_search') {
-            //         echo "This is category_search";}
+                session_start();
 
-            $conn = mysqli_connect('localhost','root','root','eventer');
-            $get = $_POST['search'];
-            if($get){
-              $show = "SELECT * FROM vendor WHERE company_name = '$get'";
-              $result = mysqli_query($conn, $show);
-              if($result->num_rows > 0){
-                while ($rows = mysqli_fetch_array($result)){
-                  createCard($rows);
+                $type = $_GET['type'];
+                if ($type == 'category_search') {
+                    // Category search
+                    $conn = mysqli_connect('localhost','root','root','eventer');
+                    if(isset($_POST['category_search'])) {
+                        $category_search = $_POST['category_search'];
+                        $query = "SELECT * FROM vendor WHERE org_type  = '$category_search'";
+                        $result = mysqli_query($conn, $query);
+                        if($result->num_rows > 0 ) {
+                            while($rows = mysqli_fetch_array($result)) {
+                                createCard($rows);
+                            }
+                        } else {
+                            echo "NOTHING FOUND";
+                        }
+                    }
+                } else {
+                    // Name search
+                    $conn = mysqli_connect('localhost','root','root','eventer');
+                    $get = $_POST['search'];
+                    if($get) {
+                        $show = "SELECT * FROM vendor WHERE company_name = '$get'";
+                        $result = mysqli_query($conn, $show);
+                        if($result->num_rows > 0) {
+                            while ($rows = mysqli_fetch_array($result)){
+                                createCard($rows);
+                            }
+                        }
+                    } else {
+                        echo "NOTHING FOUND";
+                    }
                 }
-              }
-            }else{
-              echo "NOTHING FOUND";
-            }
-             ?>
+                $conn->close();
+            ?>
             </div>
-          </div>
+        </div>
 
     <body>
 </html>
