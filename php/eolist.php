@@ -1,5 +1,4 @@
 <?php function createCard(array $rows) { ?>
-
   <div class="col-sm" style="padding-top:50px">
     <div class="container animated fadeInDown">
       <div class="card" style="width: 18rem;">
@@ -13,8 +12,7 @@
         </div>
       </div>
     </div>
-
-<?php } ?>
+ <?php } ?>
 
 
 <!DOCTYPE html>
@@ -27,47 +25,49 @@
     <body>
         <div data-include-php="navbar"></div>
 
-        <div class="container main-container">
-            <div class="row" style="padding-top:100px; padding-left:25px; padding-bottom:50px">
-            <?php
-                session_start();
+        <div class="container">
+          <div class="row" style="padding-top:100px; padding-left:25px; padding-bottom:50px">
+              <?php
+                  session_start();
 
-                $type = $_GET['type'];
-                if ($type == 'category_search') {
-                    // Category search
-                    $conn = mysqli_connect('localhost','root','root','eventer');
-                    if(isset($_POST['category_search'])) {
-                        $category_search = $_POST['category_search'];
-                        $query = "SELECT * FROM vendor WHERE org_type  = '$category_search'";
-                        $result = mysqli_query($conn, $query);
-                        if($result->num_rows > 0 ) {
-                            while($rows = mysqli_fetch_array($result)) {
-                                createCard($rows);
-                            }
-                        } else {
-                            echo "NOTHING FOUND";
-                        }
-                    }
-                } else {
-                    // Name search
-                    $conn = mysqli_connect('localhost','root','root','eventer');
-                    $get = $_POST['search'];
-                    if($get) {
-                        $show = "SELECT * FROM vendor WHERE company_name = '$get'";
-                        $result = mysqli_query($conn, $show);
-                        if($result->num_rows > 0) {
-                            while ($rows = mysqli_fetch_array($result)){
-                                createCard($rows);
-                            }
-                        }
-                    } else {
-                        echo "NOTHING FOUND";
-                    }
-                }
-                $conn->close();
-            ?>
+                  $type = $_GET['type'];
+                  if ($type == 'category_search') {
+                      // Category search
+                      $conn = mysqli_connect('localhost','root','root','eventer');
+                      if(isset($_POST['category_search'])) {
+                          $category_search = $_POST['category_search'];
+                          $query = "SELECT * FROM vendor WHERE org_type  = '$category_search'";
+                          $result = mysqli_query($conn, $query);
+                          if($result->num_rows > 0 ) {
+                              while($rows = mysqli_fetch_array($result)) {
+                                  createCard($rows);
+                              }
+                          } else {
+                              echo "NOTHING FOUND";
+                          }
+                      }
+                  } else {
+                      // Name search
+                      $conn = mysqli_connect('localhost','root','root','eventer');
+                      if(isset($_POST['category_search'])){
+                          $category_search = $_POST['category_search'];
+                          if ($category_search == 'showall') {
+                              $query = "SELECT * FROM vendor";
+
+                          }else {
+                              $query = "SELECT * FROM vendor WHERE $category_search  = 1";
+                          }
+                          $result = mysqli_query($conn, $query);
+                              if($result->num_rows > 0 ){
+                                  while($rows = mysqli_fetch_array($result)){
+                                      createCard($rows);
+                                  }
+                              }
+                      }
+                  $conn->close();
+              ?>
             </div>
-        </div>
+          </div>
 
     <body>
 </html>

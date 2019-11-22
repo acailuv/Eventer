@@ -14,7 +14,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav ml-auto">
                     <!-- Category Search -->
-                    <form class="form-inline" style="margin-right: 24px;" action="/php/eolist.php?type=category_search" method="post">
+                    <form class="form-inline" style="margin-right: 24px;" action="/php/eolist.php" method="post">
                         <label for="category_search" class="bg-dark text-light rounded-left" style="padding: 7px; margin-right: -4px; z-index: 1;">Search by Category</label>
                         <select class="form-control rounded 0" id="category_search" name="category_search">
                             <option value="" disabled selected hidden>
@@ -39,7 +39,7 @@
                     <!-- END -->
 
                     <!-- Search Bar -->
-                    <form class="form-inline" style="margin-right: 24px;" action="/php/eolist.php?type=name_search" method="post">
+                    <form class="form-inline" style="margin-right: 24px;" action="/php/eolist.php" method="post">
                         <div class="input-group">
                             <label for="searchbar" class="text-light bg-dark rounded-left" style="padding: 0 8px 0 8px;">Search by EO</label>
                             <input type="text" id="searchbar" class="form-control" name ="search" placeholder="e.g. Catherine Bridal">
