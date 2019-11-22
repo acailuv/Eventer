@@ -29,7 +29,8 @@
                             <option value="productlaunch">Product Launch</option>
                             <option value="boardmeetings">Board Meetings</option>
                             <option value="anniversary">Anniversary</option>
-                            <option value="general">Show All</option>
+                            <option value="general">Others</option>
+                            <option value="showall">Show All</option>
                         </select>
                         <div class="input-group-append">
                             <button class="btn btn-dark" type="submit" id="search" value="search">Search</button>

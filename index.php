@@ -12,7 +12,7 @@
 
     Front-End:
     > Shop Page
-    > 
+    >
 
     Back-end:
     > Category Search (NOT FOUND message should appear when there is nothing to show)
@@ -20,6 +20,7 @@
     > New EO category -> General (in Vendor Registration [vendor.html])
     > Tracking history
     > update profile user+vendor
+    > Profile picture
 
  -->
 
