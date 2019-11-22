@@ -6,7 +6,7 @@ $conn = mysqli_connect('localhost', 'root', 'root', 'eventer');
 if ($conn->connect_error) {
     die('Connection Failed : ' . $conn->connect_error);
 } else {
-    $query = "SELECT * FROM vendor WHERE user_name = '$user_name' AND password = '$password'";
+    $query = "SELECT * FROM vendor WHERE user_name = '$user_name' AND password = ENCODE('$password', 'decryptthiscasuls')";
     $result = mysqli_query($conn, $query);
     $check = mysqli_num_rows($result);
 

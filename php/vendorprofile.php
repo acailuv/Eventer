@@ -16,7 +16,18 @@ while($rows = $result->fetch_assoc()) {
     $contact = $rows ['contact_person'];
     $telephone = $rows ['tel_number'];
     $email = $rows ['email'];
-    $org = $rows ['org_type'];
+
+    // booleans
+    $birthday = $rows['birthday'];
+    $baptism = $rows['baptism'];
+    $wedding = $rows['wedding'];
+    $babyshower = $rows['babyshower'];
+    $tradeshows = $rows['tradeshows'];
+    $sports = $rows['sports'];
+    $productlaunch = $rows['productlaunch'];
+    $boardmeetings = $rows['boardmeetings'];
+    $anniversary = $rows['anniversary'];
+    $general = $rows['general'];
 }
 } else { echo "0 results"; }
 $conn->close();
@@ -37,7 +48,7 @@ $conn->close();
         <div data-include-php="navbar"></div>
 
         <div class="container animated fadeInUp delay-05s main-container">
-            <div class='bg-light rounded p-5'>
+            <div class='bg-light rounded p-5 border border-warning'>
                 <h1>About You as a <u>Vendor</u>.</h1>
                 <br>
                 <h3>Basic Information</h3>
@@ -51,10 +62,39 @@ $conn->close();
                 <p>Email: <?php echo $email; ?></p>
                 <h3>Specialties</h3>
                 <ul>
-                    <li><?php echo $org; ?></li>
-
+                    <?php
+                    if ($birthday) {
+                        echo "<li>Birthday</li>";
+                    }
+                    if ($baptism) {
+                        echo "<li>Baptism</li>";
+                    }
+                    if ($wedding) {
+                        echo "<li>Wedding</li>";
+                    }
+                    if ($babyshower) {
+                        echo "<li>Baby Shower</li>";
+                    }
+                    if ($tradeshows) {
+                        echo "<li>Trade Show</li>";
+                    }
+                    if ($sports) {
+                        echo "<li>Sports</li>";
+                    }
+                    if ($productlaunch) {
+                        echo "<li>Product Launch</li>";
+                    }
+                    if ($boardmeetings) {
+                        echo "<li>Board Meetings</li>";
+                    }
+                    if ($anniversary) {
+                        echo "<li>Anniversary</li>";
+                    }
+                    if ($general) {
+                        echo "<li>General (All Purpose)</li>";
+                    }
+                    ?>
                 </ul>
-                <a href="/php/editvendor.php">Edit Profile</a>
             </div>
 
             <br>
@@ -66,14 +106,45 @@ $conn->close();
                     <tr>
                         <th scope="col">#HireId</th>
                         <th scope="col">Client Name</th>
-                        <th scope="col">Type</th>
                         <th scope="col">Status</th>
                         <th scope="col">Update Status</th>
                         <th scope="col">View Status History</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <?php
+
+                    $conn = mysqli_connect("localhost", "root", "root", "eventer");
+                    if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                    }
+                    $sql = "SELECT * FROM hire INNER JOIN user ON hire.client_username = user.user_name WHERE vendor_username = '$_SESSION[username]'";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($rows = $result->fetch_assoc()) {
+
+                            if ($rows['current_status'] == 'Completed! (Closed)') {
+                                $view_link = '<td><a class="btn btn-link disabled" href="/php/updatetracking.php?hire_id='.$rows['hire_id'].'">Change</a></td>';
+                            } else {
+                                $view_link = '<td><a href="/php/updatetracking.php?hire_id='.$rows['hire_id'].'">Change</a></td>';
+                            }
+
+                            echo '
+                            <tr>
+                                <th scope="row">'.$rows['hire_id'].'</th>
+                                <td><a href="mailto:'.$rows['email'].'">'.$rows['first_name'].' '.$rows['last_name'].'</a></td>
+                                <td>'.$rows['current_status'].'</td>
+                                '.$view_link.'
+                                <td><a href="/php/trackinghistory.php?hire_id='.$rows['hire_id'].'">View</a></td>
+                            </tr>
+                            ';
+                        }
+                    }
+                    $conn->close();
+
+                    ?>
+                    <!-- <tr>
                         <th scope="row">1</th>
                         <td>John Smith</td>
                         <td>Birthday</td>
@@ -88,7 +159,7 @@ $conn->close();
                         <td>Renting Hall</td>
                         <td><a href="#">Update</a></td>
                         <td><a href="/php/trackinghistory.php">View</a></td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>

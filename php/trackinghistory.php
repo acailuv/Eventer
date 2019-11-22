@@ -11,9 +11,7 @@
 
         <div class="container main-container animated fadeInUp delay-05s">
             <div class="bg-light p-5 rounded">
-                <h1>Tracking History: #ORDER_ID_HERE</h1>
-                <h5>Started: ....</h5>
-                <h5>Finished: ....</h5>
+                <h1>Tracking History: <?php echo "#".$_GET['hire_id'] ?></h1>
             </div>
             <br>
             <table class="table">
@@ -24,7 +22,31 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <?php
+                    session_start();
+
+                    $current_hire_id = $_GET['hire_id'];
+                    $conn = mysqli_connect("localhost", "root", "root", "eventer");
+                    if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                    }
+                    $sql = "SELECT * FROM status_history WHERE hire_id = '$current_hire_id'";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($rows = $result->fetch_assoc()) {
+                            echo '
+                            <tr>
+                                <th scope="row">'.$rows['date'].'</th>
+                                <td>'.$rows['status'].'</td>
+                            </tr>
+                            ';
+                        }
+                    }
+                    $conn->close();
+
+                    ?>
+                    <!-- <tr>
                         <td>01/09/2021</td>
                         <td>Hired.</td>
                     </tr>
@@ -35,7 +57,7 @@
                     <tr>
                         <td>03/09/2021</td>
                         <td>Looking for Supplies</td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>

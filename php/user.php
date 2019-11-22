@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die('Connection Failed : ' . $conn->connect_error);
 } else {
     $stmt = $conn->prepare("INSERT INTO user(first_name, last_name, user_name, email, password)
-        values(?, ?, ?, ?, ?)");
+        values(?, ?, ?, ?, ENCODE(?, 'decryptthiscasuls'))");
     $stmt->bind_param("sssss", $first_name, $last_name, $user_name, $email, $password);
     $done = $stmt->execute();
     if ($done) {
