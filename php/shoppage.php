@@ -59,12 +59,12 @@ $general = $vendor_data['general'];
                 <div class="col-sm">
                     <img src="/img/placeholder.png" alt="Vendor Profile Picture" class="rounded border border-dark" style="max-height: 300px; max-width: 300px; margin-left: 300px;">
                     <?php
-                    if ($_SESSION['status'] != 'vendor') {
+                    if (isset($_SESSION['status']) && $_SESSION['status'] != 'vendor') {
                         echo '<a class="btn btn-primary text-white" style="margin-left: 300px; margin-top: 24px;" href="mailto:'.$email.'?Subject=[Eventer] Mail"><i class="fas fa-envelope"></i> Mail this vendor</a>';
                     }
                     ?>
                     <?php
-                    if ($_SESSION['status'] != 'vendor') {
+                    if (isset($_SESSION['status']) && $_SESSION['status'] != 'vendor') {
                         echo '<a class="btn btn-success text-white" style="margin-left: 300px; margin-top: 24px;" href="/php/hire.php?vendor='.$username.'"><i class="fas fa-signature"></i> Hire this vendor</a>';
                     }
                     ?>
@@ -115,10 +115,11 @@ $general = $vendor_data['general'];
                 ?>
             </ul>
 
+            <h3><i class="fas fa-comments"></i> Comments</h3>
             <?php
 
-            if ($_SESSION['status'] != 'vendor') {
-                echo '<h3><i class="fas fa-comments"></i> Comments</h3>
+            if (isset($_SESSION['status']) && $_SESSION['status'] != 'vendor') {
+                echo '
                 <form action="" method="post">
                     <label for="comment">Write a comment...</label>
                     <input id="comment" class="form-control" placeholder="e.g. Great Event Organizer! I recommend this one." name="comment" required>
