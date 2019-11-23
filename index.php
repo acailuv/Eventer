@@ -10,17 +10,18 @@
     ; Good Luck! :)                       ;
     =======================================
 
-    Front-End:
-    > Shop Page
-    >
+    "Pretty much done."
+    
+    Things to improve [IMPORTANT - MAKE THIS YOUR TOP PRIORITY]:
+    > Password confirmation: when signing up, if the password != confirmation, display an error message
+                             achieve this using javascript somehow.
+    > Email regex: example - will accept 'a@b.c' or 'example@email.com' but will not accept entry other than that format
+    > NO duplicate username when signing up (vendor + user)
 
-    Back-end:
-    > Category Search (NOT FOUND message should appear when there is nothing to show)
-    > Search By Name (NOT FOUND message should appear when there is nothing to show)
-    > New EO category -> General (in Vendor Registration [vendor.html])
-    > Tracking history
-    > update profile user+vendor
-    > Profile picture
+    Things to add [DO THIS AFTER YOU ARE DONE]:
+    > Profile picture upload.
+    > Add icons besides headers: (see how shop page looks like for reference)
+                                 use https://fontawesome.com/cheatsheet to see what icons are available
 
  -->
 

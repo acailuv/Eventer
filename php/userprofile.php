@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
         $username = $rows ['user_name'];
         $email = $rows ['email'];
     }
-} else { echo "0 results"; }
+}
 $conn->close();
 
 ?>
