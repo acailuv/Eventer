@@ -1,4 +1,5 @@
-<?php /*
+<?php
+/*
     =======================================
     ; Job Board                           ;
     =======================================
@@ -22,7 +23,67 @@
     > Add icons besides headers: (see how shop page looks like for reference)
                                  use https://fontawesome.com/cheatsheet to see what icons are available
 
-*/ ?>
+*/
+
+// Initialize table (and database) if not exists
+
+$conn = mysqli_connect('localhost', 'root', 'root');
+mysqli_query($conn, "CREATE DATABASE IF NOT EXISTS eventer");
+mysqli_close($conn);
+
+$conn = mysqli_connect('localhost', 'root', 'root', 'eventer');
+mysqli_query($conn, "CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;");
+mysqli_query($conn, "CREATE TABLE IF NOT EXISTS `vendor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_name` varchar(100) NOT NULL,
+  `office_address` varchar(150) NOT NULL,
+  `contact_person` varchar(50) NOT NULL,
+  `tel_number` varchar(13) NOT NULL,
+  `birthday` tinyint(1) NOT NULL,
+  `baptism` tinyint(1) NOT NULL,
+  `wedding` tinyint(1) NOT NULL,
+  `babyshower` tinyint(1) NOT NULL,
+  `tradeshows` tinyint(1) NOT NULL,
+  `sports` tinyint(1) NOT NULL,
+  `productlaunch` tinyint(1) NOT NULL,
+  `boardmeetings` tinyint(1) NOT NULL,
+  `anniversary` tinyint(1) NOT NULL,
+  `general` tinyint(1) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `description` varchar(900) NOT NULL,
+  `price` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;");
+mysqli_query($conn, "CREATE TABLE IF NOT EXISTS `hire` (
+  `hire_id` int(11) NOT NULL AUTO_INCREMENT,
+  `vendor_username` text NOT NULL,
+  `client_username` text NOT NULL,
+  `current_status` text NOT NULL,
+  PRIMARY KEY (`hire_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;");
+mysqli_query($conn, "CREATE TABLE IF NOT EXISTS `status_history` (
+  `hire_id` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  `status` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
+mysqli_query($conn, "CREATE TABLE IF NOT EXISTS `comment` (
+  `vendor_id` int(11) NOT NULL,
+  `client_username` text NOT NULL,
+  `date` datetime NOT NULL,
+  `content` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1; ");
+mysqli_close($conn);
+?>
 
 <!DOCTYPE html>
 
