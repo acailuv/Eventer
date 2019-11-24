@@ -16,8 +16,14 @@
                 <input type="text" id="user_name" class="form-control mb-4" placeholder="johnsmith" name="user_name" required>
                 <label class="form-check-label" for="email">Email</label>
                 <input type="email" id="email" class="form-control mb-4" placeholder="example@email.com" name="email" required>
-                <label class="form-check-label" for="password">Password</label>
-                <input type="password" id="password" class="form-control mb-4" placeholder="Password" name="password" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control mb-4" placeholder="Password" name="password" onkeyup="check()"; required>
+                <label for="confirm_password">Password Confirmation</label>
+                <input type="password" id="confirm_password" class="form-control mb-4" placeholder="Password Confirmation" name="confirm_password" onkeyup="check();" required>
+                <span id='message'></span>
+                <br>
+                <br>
+                <hr>
                 <label class="form-check-label" for="company_name">Company Name</label>
                 <input type="text" id="company_name" class="form-control mb-4" placeholder="Willowing Crane Co." name="company_name" required>
                 <label class="form-check-label" for="office_address">Office Address</label>
@@ -80,8 +86,8 @@
                 <label class="form-check-label" for="description">Description</label>
                 <input type="text" id="description" class="form-control mb-4" placeholder="Hi! This is Willowing Crane Co. Where we make your dreams come true." name="description" required>
                 <label class="form-check-label" for="price_range">Estimated Hiring Price</label>
-                <input type="text" id="price_range" class="form-control mb-4" placeholder="2000000" name="price_range" required>
-                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="submit" name="submit">Register</button>
+                <input type="number" id="price_range" class="form-control mb-4" placeholder="2000000" name="price_range" required>
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="submit" name="submit" value="submit">Register</button>
                 Sign Up as a User? <a href="/html/user.html">Click Here.</a><br>
                 Already a Member? <a href="/html/login.html">Click Here.</a>
             </form>

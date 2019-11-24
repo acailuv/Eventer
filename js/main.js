@@ -12,10 +12,22 @@ $(function(){
         $(this).load(file);
     });
 
-    // Load Resusable PHP Objects
+    // Load Reusable PHP Objects
     var includes = $('[data-include-php]');
     jQuery.each(includes, function(){
         var file = '/php/' + $(this).data('include-php') + '.php';
         $(this).load(file);
     });
 });
+
+    // Password confirmation
+    var check = function() {
+      if (document.getElementById('password').value ==
+        document.getElementById('confirm_password').value) {
+        document.getElementById('message').style.color = 'green';
+        document.getElementById('message').innerHTML = 'Password Match';
+      } else {
+        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').innerHTML = 'Password doesnt Match!';
+      }
+    }

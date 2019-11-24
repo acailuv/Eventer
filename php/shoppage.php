@@ -75,9 +75,11 @@ $general = $vendor_data['general'];
             <p>Contact Person: <?php echo $contact; ?> </p>
             <p>Telephone Number: <?php echo $telephone; ?> </p>
             <p>Email: <?php echo $email; ?> </p>
+            <br>
 
             <h3><i class="fas fa-glass-cheers"></i> About this Organizer</h3>
             <p><?php echo $description; ?></p>
+            <br>
 
             <h3><i class="fas fa-star"></i> Specialties</h3>
             <ul>

@@ -11,12 +11,12 @@
     =======================================
 
     "Pretty much done."
-    
+
     Things to improve [IMPORTANT - MAKE THIS YOUR TOP PRIORITY]:
     > Password confirmation: when signing up, if the password != confirmation, display an error message
-                             achieve this using javascript somehow.
-    > Email regex: example - will accept 'a@b.c' or 'example@email.com' but will not accept entry other than that format
-    > NO duplicate username when signing up (vendor + user)
+                             achieve this using javascript somehow. (DONE)
+    > Email regex: example - will accept 'a@b.c' or 'example@email.com' but will not accept entry other than that format (DONE)
+    > NO duplicate username when signing up (vendor + user) (DONE)
 
     Things to add [DO THIS AFTER YOU ARE DONE]:
     > Profile picture upload.
