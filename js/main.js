@@ -26,8 +26,10 @@ $(function(){
         document.getElementById('confirm_password').value) {
         document.getElementById('message').style.color = 'green';
         document.getElementById('message').innerHTML = 'Password Match';
+        document.getElementById('submit').disabled = false;
       } else {
         document.getElementById('message').style.color = 'red';
         document.getElementById('message').innerHTML = 'Password doesnt Match!';
+        document.getElementById('submit').disabled = true;
       }
     }

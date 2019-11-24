@@ -51,16 +51,16 @@ $conn->close();
             <div class='bg-light rounded p-5 border border-warning'>
                 <h1>About You as a <u>Vendor</u>.</h1>
                 <br>
-                <h3>Basic Information</h3>
+                <h3><i class="fas fa-user"></i> Basic Information</h3>
                 <p>Vendor ID: <?php echo $id; ?> </p>
                 <p>Company Name: <?php echo $name; ?> </p>
                 <p>Address: <?php echo $address; ?> </p>
                 <p>Username: <?php echo $username; ?> </p>
-                <h3>Contact Details</h3>
+                <h3><i class="fas fa-user-friends"></i> Contact Details</h3>
                 <p>Contact Person: <?php echo $contact; ?> </p>
                 <p>Telephone Number: <?php echo $telephone; ?></p>
                 <p>Email: <?php echo $email; ?></p>
-                <h3>Specialties</h3>
+                <h3><i class="fas fa-star"></i> Specialties</h3>
                 <ul>
                     <?php
                     if ($birthday) {
@@ -100,7 +100,7 @@ $conn->close();
             <br>
             <br>
             <br>
-            <h1>Your Clients</h1>
+            <h1><i class="fas fa-receipt"></i> Your Clients</h1>
             <table class="table">
                 <thead class="thead-light">
                     <tr>

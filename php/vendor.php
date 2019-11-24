@@ -59,38 +59,44 @@ if(isset($_POST['submit'])){
         }
   }
 
-  $conn = new mysqli('localhost','root','root','eventer');
-  if($conn->connect_error){
-    die('Connection Failed : '.$conn->connect_error);
-  }else{
+  if (!ctype_alnum($user_name)) {
+      echo "<script>alert('Username should only contain alphanumeric characters.'); window.location.href='/html/user.html'</script>";
+  } else {
 
-      if(isset($_POST['submit'])){
-          $query = ("SELECT * FROM vendor WHERE user_name='$user_name'");
-          $result = mysqli_query($conn, $query);
-          $rows = mysqli_num_rows($result);
+      $conn = new mysqli('localhost','root','root','eventer');
+      if($conn->connect_error) {
+        die('Connection Failed : '.$conn->connect_error);
+      } else {
+          if(isset($_POST['submit'])){
+              $query = ("SELECT * FROM vendor WHERE user_name='$user_name'");
+              $result = mysqli_query($conn, $query);
+              $rows = mysqli_num_rows($result);
 
-          if($rows > 0){
-              echo "<script>alert('Username already taken! Please try different one.'); window.location.href='/html/vendor.html'</script>";
-          }else{
-              $stmt = $conn->prepare("INSERT INTO vendor(company_name, office_address, contact_person,
-                  tel_number, birthday, baptism,
-                  wedding, babyshower, tradeshows,
-                  sports, productlaunch, boardmeetings,
-                  anniversary, general, email,
-                  user_name, password, description,
-                  price)
-              values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ENCODE(?, 'decryptthiscasuls'), ?, ?)");
-              $stmt->bind_param("ssssiiiiiiiiiisssss",$company_name, $office_address, $contact_person, $tel_number,
-               $birthday, $baptism, $wedding, $babyshower, $tradeshows, $sports, $productlaunch, $boardmeetings, $anniversary, $general, $email, $user_name, $password, $description, $price_range);
-              $done = $stmt->execute();
-
-              if ($done){
-                session_start();
-                $_SESSION['current_page'] = "/index.php";
-                 header("location:/index.php");
+              if($rows > 0){
+                  echo "<script>alert('Username already taken! Please try different one.'); window.location.href='/html/vendor.html'</script>";
               }else{
-                echo "ERROR";
-                print_r($stmt->error_list);
+                  $stmt = $conn->prepare("INSERT INTO vendor(company_name, office_address, contact_person,
+                      tel_number, birthday, baptism,
+                      wedding, babyshower, tradeshows,
+                      sports, productlaunch, boardmeetings,
+                      anniversary, general, email,
+                      user_name, password, description,
+                      price)
+                  values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ENCODE(?, 'decryptthiscasuls'), ?, ?)");
+                  $stmt->bind_param("ssssiiiiiiiiiisssss",$company_name, $office_address, $contact_person, $tel_number,
+                   $birthday, $baptism, $wedding, $babyshower, $tradeshows, $sports, $productlaunch, $boardmeetings, $anniversary, $general, $email, $user_name, $password, $description, $price_range);
+                  $done = $stmt->execute();
+
+                  if ($done){
+                    session_start();
+                    $_SESSION['current_page'] = "/index.php";
+                     header("location:/index.php");
+                  }else{
+                    echo "ERROR";
+                    print_r($stmt->error_list);
+                  }
+                  $stmt->close();
+                  $conn->close();
               }
           }
       }

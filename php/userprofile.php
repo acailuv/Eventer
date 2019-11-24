@@ -43,7 +43,7 @@ $conn->close();
             <br>
             <br>
             <br>
-            <h1>Your Orders</h1>
+            <h1><i class="fas fa-receipt"></i> Your Orders</h1>
             <table class="table">
                 <thead class="thead-light">
                     <tr>
